@@ -311,25 +311,25 @@ NESTED BLOCKS
 /* TODO: would be nicer if defined from code */
 
 .blockContent.isEmpty.hasAnchor .inlineContent:before {
-  content: "Enter text or type '/' for commands";
+  content: "'/'를 입력해 명령어를 사용하세요.";
 }
 
 .blockContent.isFilter.hasAnchor .inlineContent:before {
-  content: "Type to filter";
+  content: "필터";
 }
 
 .blockContent[data-content-type="heading"].isEmpty .inlineContent:before {
-  content: "Heading";
+  content: "제목";
 }
 
 .blockContent[data-content-type="bulletListItem"].isEmpty .inlineContent:before,
 .blockContent[data-content-type="numberedListItem"].isEmpty
 .inlineContent:before {
-  content: "List";
+  content: "목록";
 }
 
 .isEmpty .blockContent[data-content-type="captionedImage"] .inlineContent:before {
-  content: "Caption";
+  content: "캡션";
 }
 
 /* TEXT COLORS */
