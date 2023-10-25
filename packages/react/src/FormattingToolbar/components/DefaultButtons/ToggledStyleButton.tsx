@@ -33,6 +33,7 @@ const icons: Record<ToggledStyle, IconType> = {
 export const ToggledStyleButton = <BSchema extends BlockSchema>(props: {
   editor: BlockNoteEditor<BSchema>;
   toggledStyle: ToggledStyle;
+  mainTooltip?: string;
 }) => {
   const selectedBlocks = useSelectedBlocks(props.editor);
 
@@ -62,6 +63,7 @@ export const ToggledStyleButton = <BSchema extends BlockSchema>(props: {
       onClick={() => toggleStyle(props.toggledStyle)}
       isSelected={active}
       mainTooltip={
+        props.mainTooltip ||
         props.toggledStyle.slice(0, 1).toUpperCase() +
         props.toggledStyle.slice(1)
       }

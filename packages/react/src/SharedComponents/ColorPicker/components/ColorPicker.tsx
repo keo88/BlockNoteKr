@@ -1,6 +1,20 @@
 import { Menu } from "@mantine/core";
 import { ColorIcon } from "./ColorIcon";
 import { TiTick } from "react-icons/ti";
+import {useMemo} from "react";
+
+export const defaultColorSections = [
+  "default",
+  "gray",
+  "brown",
+  "red",
+  "orange",
+  "yellow",
+  "green",
+  "blue",
+  "purple",
+  "pink",
+  ];
 
 export const ColorPicker = (props: {
   onClick?: () => void;
@@ -13,23 +27,35 @@ export const ColorPicker = (props: {
     color: string;
     setColor: (color: string) => void;
   };
+  colorSections?: string[];
+  colorLabels?: Record<string, string>;
 }) => {
+  const colors = useMemo(() => {
+    if (props.colorSections) {
+      return props.colorSections;
+    }
+
+    return defaultColorSections;
+  }, [props]);
+
+  const labels = useMemo(() => {
+    const newLabels: Record<string, string> = {};
+    colors.forEach((color) => {
+      if (props.colorLabels && Object.hasOwn(props.colorLabels, color)) {
+        newLabels[color] = props.colorLabels[color];
+      } else {
+        newLabels[color] = color.charAt(0).toUpperCase() + color.slice(1);
+      }
+    });
+
+    return newLabels;
+  }, [props.colorLabels, colors]);
+
   const TextColorSection = () =>
     props.text ? (
       <>
         <Menu.Label>Text</Menu.Label>
-        {[
-          "default",
-          "gray",
-          "brown",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "blue",
-          "purple",
-          "pink",
-        ].map((color) => (
+        {colors.map((color) => (
           <Menu.Item
             onClick={() => {
               props.onClick && props.onClick();
@@ -46,7 +72,7 @@ export const ColorPicker = (props: {
                 <div style={{ width: "24px", padding: "0" }} />
               )
             }>
-            {color.charAt(0).toUpperCase() + color.slice(1)}
+            {labels[color]}
           </Menu.Item>
         ))}
       </>
@@ -56,18 +82,7 @@ export const ColorPicker = (props: {
     props.background ? (
       <>
         <Menu.Label>Background</Menu.Label>
-        {[
-          "default",
-          "gray",
-          "brown",
-          "red",
-          "orange",
-          "yellow",
-          "green",
-          "blue",
-          "purple",
-          "pink",
-        ].map((color) => (
+        {colors.map((color) => (
           <Menu.Item
             onClick={() => {
               props.onClick && props.onClick();
@@ -84,7 +99,7 @@ export const ColorPicker = (props: {
                 <div style={{ width: "24px", padding: "0" }} />
               )
             }>
-            {color.charAt(0).toUpperCase() + color.slice(1)}
+            {labels[color]}
           </Menu.Item>
         ))}
       </>

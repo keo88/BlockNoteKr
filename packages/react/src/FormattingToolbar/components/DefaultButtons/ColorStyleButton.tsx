@@ -11,6 +11,9 @@ import { usePreventMenuOverflow } from "../../../hooks/usePreventMenuOverflow";
 
 export const ColorStyleButton = <BSchema extends BlockSchema>(props: {
   editor: BlockNoteEditor<BSchema>;
+  mainTooltip?: string;
+  colorSections?: string[];
+  colorLabels?: Record<string, string>;
 }) => {
   const selectedBlocks = useSelectedBlocks(props.editor);
 
@@ -68,7 +71,7 @@ export const ColorStyleButton = <BSchema extends BlockSchema>(props: {
     <Menu onOpen={updateMaxHeight}>
       <Menu.Target>
         <ToolbarButton
-          mainTooltip={"Colors"}
+          mainTooltip={props.mainTooltip || "Colors"}
           icon={() => (
             <ColorIcon
               textColor={currentTextColor}
@@ -89,6 +92,8 @@ export const ColorStyleButton = <BSchema extends BlockSchema>(props: {
               color: currentBackgroundColor,
               setColor: setBackgroundColor,
             }}
+            colorSections={props.colorSections}
+            colorLabels={props.colorLabels}
           />
         </Menu.Dropdown>
       </div>

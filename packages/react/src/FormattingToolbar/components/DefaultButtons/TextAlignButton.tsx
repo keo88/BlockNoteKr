@@ -28,6 +28,7 @@ const icons: Record<TextAlignment, IconType> = {
 export const TextAlignButton = <BSchema extends BlockSchema>(props: {
   editor: BlockNoteEditor<BSchema>;
   textAlignment: TextAlignment;
+  mainTooltip?: string;
 }) => {
   const selectedBlocks = useSelectedBlocks(props.editor);
 
@@ -40,6 +41,20 @@ export const TextAlignButton = <BSchema extends BlockSchema>(props: {
 
     return;
   }, [selectedBlocks]);
+
+  const toolTip = useMemo(() => {
+    if (props.mainTooltip) {
+      return props.mainTooltip;
+    }
+
+    return (
+      props.textAlignment === "justify"
+        ? "Justify Text"
+        : "Align Text " +
+          props.textAlignment.slice(0, 1).toUpperCase() +
+          props.textAlignment.slice(1)
+    );
+  }, [props]);
 
   const setTextAlignment = useCallback(
     (textAlignment: TextAlignment) => {
@@ -66,13 +81,7 @@ export const TextAlignButton = <BSchema extends BlockSchema>(props: {
     <ToolbarButton
       onClick={() => setTextAlignment(props.textAlignment)}
       isSelected={textAlignment === props.textAlignment}
-      mainTooltip={
-        props.textAlignment === "justify"
-          ? "Justify Text"
-          : "Align Text " +
-            props.textAlignment.slice(0, 1).toUpperCase() +
-            props.textAlignment.slice(1)
-      }
+      mainTooltip={toolTip}
       icon={icons[props.textAlignment]}
     />
   );

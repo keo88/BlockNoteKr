@@ -8,6 +8,7 @@ import { formatKeyboardShortcut } from "../../../utils";
 
 export const NestBlockButton = <BSchema extends BlockSchema>(props: {
   editor: BlockNoteEditor<BSchema>;
+  mainTooltip?: string;
 }) => {
   const [canNestBlock, setCanNestBlock] = useState<boolean>();
 
@@ -24,7 +25,7 @@ export const NestBlockButton = <BSchema extends BlockSchema>(props: {
     <ToolbarButton
       onClick={nestBlock}
       isDisabled={!canNestBlock}
-      mainTooltip="Nest Block"
+      mainTooltip={props.mainTooltip ?? "Nest Block"}
       secondaryTooltip={formatKeyboardShortcut("Tab")}
       icon={RiIndentIncrease}
     />
@@ -33,6 +34,7 @@ export const NestBlockButton = <BSchema extends BlockSchema>(props: {
 
 export const UnnestBlockButton = <BSchema extends BlockSchema>(props: {
   editor: BlockNoteEditor<BSchema>;
+  mainTooltip?: string;
 }) => {
   const [canUnnestBlock, setCanUnnestBlock] = useState<boolean>();
 
@@ -49,7 +51,7 @@ export const UnnestBlockButton = <BSchema extends BlockSchema>(props: {
     <ToolbarButton
       onClick={unnestBlock}
       isDisabled={!canUnnestBlock}
-      mainTooltip="Unnest Block"
+      mainTooltip={props.mainTooltip ?? "Unnest Block"}
       secondaryTooltip={formatKeyboardShortcut("Shift+Tab")}
       icon={RiIndentDecrease}
     />

@@ -11,6 +11,7 @@ import { formatKeyboardShortcut } from "../../../utils";
 
 export const CreateLinkButton = <BSchema extends BlockSchema>(props: {
   editor: BlockNoteEditor<BSchema>;
+  mainTooltip?: string;
 }) => {
   const selectedBlocks = useSelectedBlocks(props.editor);
 
@@ -49,7 +50,7 @@ export const CreateLinkButton = <BSchema extends BlockSchema>(props: {
   return (
     <ToolbarInputDropdownButton>
       <ToolbarButton
-        mainTooltip={"Create Link"}
+        mainTooltip={props.mainTooltip ?? "Create Link"}
         secondaryTooltip={formatKeyboardShortcut("Mod+K")}
         icon={RiLink}
       />
