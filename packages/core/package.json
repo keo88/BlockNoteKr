@@ -3,7 +3,7 @@
   "homepage": "https://github.com/keo88/BlockNoteKr",
   "private": false,
   "license": "MPL-2.0",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "files": [
     "dist",
     "types",
@@ -46,7 +46,8 @@
     "preview": "vite preview",
     "lint": "eslint src --max-warnings 0",
     "test": "vitest --run",
-    "test-watch": "vitest watch"
+    "test-watch": "vitest watch",
+    "publish": "tsc && vite build && npm publish"
   },
   "dependencies": {
     "@emotion/cache": "^11.10.5",
@@ -108,6 +109,5 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
-  },
-  "gitHead": "37614ab348dcc7faa830a9a88437b37197a2162d"
+  }
 }
