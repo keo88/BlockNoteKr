@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { RiExternalLinkFill, RiLinkUnlink } from "react-icons/ri";
-import { BlockSchema } from "@blocknote/core";
+import { BlockSchema } from "@keo88/blocknote-core-kr";
 
 import { HyperlinkToolbarProps } from "./HyperlinkToolbarPositioner";
 import { Toolbar } from "../../SharedComponents/Toolbar/components/Toolbar";

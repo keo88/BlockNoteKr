@@ -1,4 +1,4 @@
-import { BlockSchema } from "@blocknote/core";
+import { BlockSchema } from "@keo88/blocknote-core-kr";
 
 import { DragHandleMenu, DragHandleMenuProps } from "./DragHandleMenu";
 import { RemoveBlockButton } from "./DefaultButtons/RemoveBlockButton";

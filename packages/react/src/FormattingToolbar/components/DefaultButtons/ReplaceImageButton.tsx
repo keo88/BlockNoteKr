@@ -1,4 +1,4 @@
-import { BlockNoteEditor, BlockSchema } from "@blocknote/core";
+import { BlockNoteEditor, BlockSchema } from "@keo88/blocknote-core-kr";
 import Tippy from "@tippyjs/react";
 import { useEffect, useState } from "react";
 import { RiImageEditFill } from "react-icons/ri";

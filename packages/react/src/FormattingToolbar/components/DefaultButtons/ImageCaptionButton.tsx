@@ -6,7 +6,7 @@ import {
   useMemo,
   useState,
 } from "react";
-import { BlockNoteEditor, BlockSchema, PartialBlock } from "@blocknote/core";
+import { BlockNoteEditor, BlockSchema, PartialBlock } from "@keo88/blocknote-core-kr";
 import { RiText } from "react-icons/ri";
 
 import { ToolbarButton } from "../../../SharedComponents/Toolbar/components/ToolbarButton";

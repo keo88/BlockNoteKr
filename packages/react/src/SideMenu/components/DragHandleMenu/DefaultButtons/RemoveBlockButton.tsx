@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { BlockSchema } from "@blocknote/core";
+import { BlockSchema } from "@keo88/blocknote-core-kr";
 
 import { DragHandleMenuProps } from "../DragHandleMenu";
 import { DragHandleMenuItem } from "../DragHandleMenuItem";

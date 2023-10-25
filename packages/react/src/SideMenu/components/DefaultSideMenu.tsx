@@ -1,4 +1,4 @@
-import { BlockSchema } from "@blocknote/core";
+import { BlockSchema } from "@keo88/blocknote-core-kr";
 
 import { SideMenuProps } from "./SideMenuPositioner";
 import { SideMenu } from "./SideMenu";

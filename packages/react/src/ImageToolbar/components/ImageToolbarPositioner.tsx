@@ -6,7 +6,7 @@ import {
   DefaultBlockSchema,
   ImageToolbarState,
   SpecificBlock,
-} from "@blocknote/core";
+} from "@keo88/blocknote-core-kr";
 import Tippy, { tippy } from "@tippyjs/react";
 import { FC, useEffect, useMemo, useRef, useState } from "react";
 

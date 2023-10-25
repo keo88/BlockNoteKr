@@ -4,7 +4,7 @@ import {
   defaultBlockSchema,
   DefaultBlockSchema,
   getDefaultSlashMenuItems,
-} from "@blocknote/core";
+} from "@keo88/blocknote-core-kr";
 import {
   RiH1,
   RiH2,

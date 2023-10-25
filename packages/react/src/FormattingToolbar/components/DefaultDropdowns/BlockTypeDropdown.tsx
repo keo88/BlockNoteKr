@@ -4,7 +4,7 @@ import {
   BlockNoteEditor,
   BlockSchema,
   PartialBlock,
-} from "@blocknote/core";
+} from "@keo88/blocknote-core-kr";
 import { IconType } from "react-icons";
 import {
   RiH1,

@@ -1,4 +1,4 @@
-import { BlockSchema, PartialBlock } from "@blocknote/core";
+import { BlockSchema, PartialBlock } from "@keo88/blocknote-core-kr";
 
 import { ImageToolbarProps } from "./ImageToolbarPositioner";
 import { Toolbar } from "../../SharedComponents/Toolbar/components/Toolbar";

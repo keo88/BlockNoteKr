@@ -12,7 +12,7 @@ import {
   PropSchema,
   propsToAttributes,
   render,
-} from "@blocknote/core";
+} from "@keo88/blocknote-core-kr";
 import {
   NodeViewContent,
   NodeViewProps,
