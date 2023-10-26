@@ -101,11 +101,11 @@ export const DefaultImageToolbar = <BSchema extends BlockSchema>(
         <Tabs.List>
           {props.editor.uploadFile !== undefined && (
             <Tabs.Tab value="upload" data-test={"upload-tab"}>
-              Upload
+              업로드
             </Tabs.Tab>
           )}
           <Tabs.Tab value="embed" data-test={"embed-tab"}>
-            Embed
+            임베드
           </Tabs.Tab>
         </Tabs.List>
 
@@ -119,7 +119,7 @@ export const DefaultImageToolbar = <BSchema extends BlockSchema>(
                 gap: "8px",
               }}>
               <FileInput
-                placeholder={"Upload Image"}
+                placeholder={"이미지 업로드"}
                 size={"xs"}
                 value={null}
                 onChange={handleFileChange}
@@ -127,7 +127,7 @@ export const DefaultImageToolbar = <BSchema extends BlockSchema>(
               />
               {uploadFailed && (
                 <Text color={"red"} size={12} style={{ textAlign: "center" }}>
-                  Error: Upload failed
+                  업로드 실패
                 </Text>
               )}
             </div>
@@ -144,7 +144,7 @@ export const DefaultImageToolbar = <BSchema extends BlockSchema>(
             }}>
             <TextInput
               size={"xs"}
-              placeholder={"Enter URL"}
+              placeholder={"URL 입력"}
               value={currentURL}
               onChange={handleURLChange}
               onKeyDown={handleURLEnter}
@@ -155,7 +155,7 @@ export const DefaultImageToolbar = <BSchema extends BlockSchema>(
               onClick={handleURLClick}
               size={"xs"}
               data-test={"embed-input-button"}>
-              Embed Image
+              이미지 임베드
             </Button>
           </div>
         </Tabs.Panel>

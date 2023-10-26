@@ -67,7 +67,7 @@ export const EditHyperlinkMenu = forwardRef<
         icon={RiLink}
         inputProps={{
           autoFocus: true,
-          placeholder: "Edit URL",
+          placeholder: "URL",
           value: currentUrl,
           onKeyDown: handleEnter,
           onChange: handleUrlChange,
@@ -78,7 +78,7 @@ export const EditHyperlinkMenu = forwardRef<
         type={"text"}
         icon={RiText}
         inputProps={{
-          placeholder: "Edit Title",
+          placeholder: "제목 수정",
           value: currentText,
           onKeyDown: handleEnter,
           onChange: handleTextChange,

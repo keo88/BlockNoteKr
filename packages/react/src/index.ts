@@ -11,6 +11,8 @@ export * from "./FormattingToolbar/components/DefaultButtons/CreateLinkButton";
 export * from "./FormattingToolbar/components/DefaultButtons/NestBlockButtons";
 export * from "./FormattingToolbar/components/DefaultButtons/TextAlignButton";
 export * from "./FormattingToolbar/components/DefaultButtons/ToggledStyleButton";
+export * from "./FormattingToolbar/components/DefaultButtons/ReplaceImageButton";
+export * from "./FormattingToolbar/components/DefaultButtons/ImageCaptionButton";
 
 export * from "./HyperlinkToolbar/components/HyperlinkToolbarPositioner";
 

@@ -16,6 +16,21 @@ export const defaultColorSections = [
   "pink",
   ];
 
+export const defaultColorTranslations: Record<string, string> = {
+  default: '기본',
+  gray: '회색',
+  brown: '갈색',
+  red: '빨강',
+  orange: '주황',
+  yellow: '노랑',
+  green: '초록',
+  blue: '파랑',
+  purple: '보라',
+  pink: '분홍',
+  Text: '글',
+  Background: '배경',
+};
+
 export const ColorPicker = (props: {
   onClick?: () => void;
   iconSize?: number;
@@ -44,7 +59,7 @@ export const ColorPicker = (props: {
       if (props.colorLabels && Object.hasOwn(props.colorLabels, color)) {
         newLabels[color] = props.colorLabels[color];
       } else {
-        newLabels[color] = color.charAt(0).toUpperCase() + color.slice(1);
+        newLabels[color] = defaultColorTranslations[color];
       }
     });
 
@@ -54,7 +69,7 @@ export const ColorPicker = (props: {
   const TextColorSection = () =>
     props.text ? (
       <>
-        <Menu.Label>Text</Menu.Label>
+        <Menu.Label>글</Menu.Label>
         {colors.map((color) => (
           <Menu.Item
             onClick={() => {
@@ -81,7 +96,7 @@ export const ColorPicker = (props: {
   const BackgroundColorSection = () =>
     props.background ? (
       <>
-        <Menu.Label>Background</Menu.Label>
+        <Menu.Label>배경</Menu.Label>
         {colors.map((color) => (
           <Menu.Item
             onClick={() => {

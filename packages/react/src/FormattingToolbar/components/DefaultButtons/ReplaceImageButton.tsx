@@ -9,6 +9,7 @@ import { useSelectedBlocks } from "../../../hooks/useSelectedBlocks";
 
 export const ReplaceImageButton = <BSchema extends BlockSchema>(props: {
   editor: BlockNoteEditor<BSchema>;
+  mainTooltip?: string;
 }) => {
   const selectedBlocks = useSelectedBlocks(props.editor);
 
@@ -41,7 +42,7 @@ export const ReplaceImageButton = <BSchema extends BlockSchema>(props: {
       <ToolbarButton
         onClick={() => setIsOpen(!isOpen)}
         isSelected={isOpen}
-        mainTooltip={"Replace Image"}
+        mainTooltip={props.mainTooltip ?? "Replace Image"}
         icon={RiImageEditFill}
       />
     </Tippy>

@@ -17,6 +17,7 @@ import { ToolbarInputDropdownItem } from "../../../SharedComponents/Toolbar/comp
 
 export const ImageCaptionButton = <BSchema extends BlockSchema>(props: {
   editor: BlockNoteEditor<BSchema>;
+  mainTooltip?: string;
 }) => {
   const selectedBlocks = useSelectedBlocks(props.editor);
 
@@ -81,7 +82,7 @@ export const ImageCaptionButton = <BSchema extends BlockSchema>(props: {
   return (
     <ToolbarInputDropdownButton>
       <ToolbarButton
-        mainTooltip={"Edit Caption"}
+        mainTooltip={props.mainTooltip ?? "Edit Caption"}
         icon={RiText}
         isSelected={selectedBlocks[0].props.caption !== ""}
       />
@@ -91,7 +92,7 @@ export const ImageCaptionButton = <BSchema extends BlockSchema>(props: {
           icon={RiText}
           inputProps={{
             autoFocus: true,
-            placeholder: "Edit Caption",
+            placeholder: props.mainTooltip ?? "Edit Caption",
             value: currentCaption,
             onKeyDown: handleEnter,
             onChange: handleChange,
